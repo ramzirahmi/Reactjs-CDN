@@ -17,9 +17,13 @@
     <div id="app"></div>
     <script type="text/babel">
       class App extends React.Component {
+        state = {
+          name: "App Component",
+        };
         render() {
           return (
             <div>
+              <p>{this.state.name}</p>
               <Header name="Header" />
               <Content name="Content" />
               <Footer name="Footer" />
@@ -29,20 +33,41 @@
       }
       // Header Component
       class Header extends React.Component {
+        state = {
+          name: "Header Component",
+        };
         render() {
-          return <header>{this.props.name}</header>;
+          return (
+            <header>
+              {this.props.name} And State {this.state.name}
+            </header>
+          );
         }
       }
       // Content Component
       class Content extends React.Component {
+        state = {
+          name: "Content Component",
+        };
         render() {
-          return <main>{this.props.name}</main>;
+          return (
+            <main>
+              {this.props.name} And State {this.state.name}
+            </main>
+          );
         }
       }
       // Footer Component
       class Footer extends React.Component {
+        state = {
+          name: "Footer Component",
+        };
         render() {
-          return <footer>{this.props.name}</footer>;
+          return (
+            <footer>
+              {this.props.name} And State {this.state.name}
+            </footer>
+          );
         }
       }
       ReactDOM.render(<App />, document.getElementById("app"));
