@@ -16,14 +16,36 @@
 
     <div id="app"></div>
     <script type="text/babel">
-      const ele1 = (
-        <p className="test">
-          <span>Span 1</span>
-          <i>Italic</i>
-        </p>
-      );
-
-      ReactDOM.render(ele1, document.getElementById("app"));
+      class App extends React.Component {
+        render() {
+          return (
+            <div>
+              <Header />
+              <Content />
+              <Footer />
+            </div>
+          );
+        }
+      }
+      // Header Component
+      class Header extends React.Component {
+        render() {
+          return <header>Header</header>;
+        }
+      }
+      // Content Component
+      class Content extends React.Component {
+        render() {
+          return <main>Content</main>;
+        }
+      }
+      // Footer Component
+      class Footer extends React.Component {
+        render() {
+          return <footer>Footer</footer>;
+        }
+      }
+      ReactDOM.render(<App />, document.getElementById("app"));
     </script>
   </head>
   <body></body>
