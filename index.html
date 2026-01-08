@@ -20,9 +20,9 @@
         render() {
           return (
             <div>
-              <Header />
-              <Content />
-              <Footer />
+              <Header name="Header" />
+              <Content name="Content" />
+              <Footer name="Footer" />
             </div>
           );
         }
@@ -30,19 +30,19 @@
       // Header Component
       class Header extends React.Component {
         render() {
-          return <header>Header</header>;
+          return <header>{this.props.name}</header>;
         }
       }
       // Content Component
       class Content extends React.Component {
         render() {
-          return <main>Content</main>;
+          return <main>{this.props.name}</main>;
         }
       }
       // Footer Component
       class Footer extends React.Component {
         render() {
-          return <footer>Footer</footer>;
+          return <footer>{this.props.name}</footer>;
         }
       }
       ReactDOM.render(<App />, document.getElementById("app"));
